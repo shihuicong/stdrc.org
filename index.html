@@ -1,12 +1,382 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>STDRC – Shanghai Tennis Dynamics Research Center</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Shanghai Tennis Dynamics Research Center (STDRC) – Independent research on tennis stroke mechanics, whip dynamics, and nonlinear kinetic systems." />
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --bg-alt: #ffffff;
+      --fg: #111827;
+      --muted: #4b5563;
+      --accent: #115e59;
+      --accent-light: #0f766e;
+      --border: #e5e7eb;
+      --max-width: 980px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(247, 248, 250, 0.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.6rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 0.98rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      font-size: 0.9rem;
+    }
+
+    nav a {
+      color: var(--muted);
+    }
+
+    nav a:hover {
+      color: var(--accent-light);
+    }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1.75rem 1.25rem 3rem;
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+    }
+
+    .hero {
+      padding: 1.5rem 1.5rem 2rem;
+      background: var(--bg-alt);
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.03);
+    }
+
+    .hero-title {
+      font-size: 1.9rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-subtitle {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent-light);
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+    }
+
+    .hero-tagline {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+      max-width: 36rem;
+    }
+
+    .hero-meta {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.35rem;
+    }
+
+    h3 {
+      font-size: 1rem;
+      margin-top: 0.6rem;
+      margin-bottom: 0.25rem;
+    }
+
+    p {
+      margin-bottom: 0.5rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    ul {
+      margin-left: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    li + li {
+      margin-top: 0.2rem;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .card {
+      background: var(--bg-alt);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      padding: 1.1rem 1.25rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.1rem 0.45rem;
+      border-radius: 999px;
+      background: #ecfdf5;
+      color: #047857;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-left: 0.35rem;
+    }
+
+    .muted-small {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1rem 1.25rem 2rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 720px) {
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .hero {
+        padding: 1.25rem 1rem 1.5rem;
+      }
+      .hero-title {
+        font-size: 1.5rem;
+      }
+      .two-col {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Shanghai Tennis Dynamics Research Center (STDRC)</h1>
-  <p>Independent research on tennis stroke mechanics, whip dynamics, and nonlinear kinetic systems.</p>
-  <p>Website under construction.</p>
+  <header>
+    <div class="nav-inner">
+      <div class="brand">STDRC · Shanghai Tennis Dynamics Research Center</div>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-subtitle">Independent Tennis Science Initiative</div>
+      <h1 class="hero-title">Shanghai Tennis Dynamics Research Center (STDRC)</h1>
+      <p class="hero-tagline">
+        Independent research on tennis stroke mechanics, whip dynamics, and nonlinear kinetic systems,
+        integrating high-speed video analysis, physics-based modelling, and on-court experiments.
+      </p>
+      <p class="hero-meta">
+        STDRC currently focuses on <strong>PRW forehand theory</strong>, <strong>whip-like acceleration mechanisms</strong>,
+        racket–arm <strong>nonlinear transmission</strong>, and <strong>dual-handed stroke development</strong>.
+      </p>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <h2>About STDRC</h2>
+      <div class="two-col">
+        <div>
+          <p>
+            The Shanghai Tennis Dynamics Research Center (STDRC) is an independent, non-commercial research project
+            devoted to the scientific study of tennis stroke mechanics. The center adopts a virtual laboratory model:
+            there is no formal institutional affiliation; all work is conducted by an individual researcher with
+            a background in engineering, physics-thinking, and intensive on-court practice.
+          </p>
+          <p>
+            STDRC aims to build explanatory frameworks for modern tennis strokes using concepts from
+            dynamics, nonlinear systems, and angular momentum transfer. Rather than offering coaching tips,
+            the center focuses on <em>mechanistic understanding</em> that can inform technique design,
+            equipment development, and training methodology.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Current Focus Areas</h3>
+          <ul>
+            <li>Phase-Reversal Whip (PRW) forehand mechanics</li>
+            <li>Racket-head lag and multi-stage acceleration</li>
+            <li>Nonlinear delayed transmission in racket–arm systems</li>
+            <li>Dual-handed (“two-racquet”) stroke development</li>
+            <li>High-speed video analysis and kinematic reconstruction</li>
+          </ul>
+          <p class="muted-small">
+            STDRC is a virtual research center, not a registered institution or commercial entity.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research -->
+    <section id="research">
+      <h2>Research Themes</h2>
+
+      <h3>1. PRW Forehand Theory <span class="badge">PRW</span></h3>
+      <p>
+        Development of the Phase-Reversal Whip (PRW) model for modern forehand strokes, characterizing how
+        the racket axis reverses relative to the arm and how this reversal creates a whip-like release
+        of angular momentum at impact.
+      </p>
+
+      <h3>2. Whip Dynamics & Racket Lag</h3>
+      <p>
+        Analysis of multi-phase acceleration, centripetal-force driven speed amplification, and the role
+        of handle traction in generating peak racket-head speed with minimal muscular effort.
+      </p>
+
+      <h3>3. Nonlinear Transmission Systems</h3>
+      <p>
+        Modelling the racket–arm–torso chain as a nonlinear delayed transmission system, with emphasis on
+        how loading, unloading, and phase delay create non-intuitive kinematic patterns in high-level strokes.
+      </p>
+
+      <h3>4. Dual-Handed Stroke Development</h3>
+      <p>
+        Experimental work using both left and right hands (dual-racquet training) to study bilateral
+        learning transfer, coordination symmetry, and robustness of technique under asymmetric constraints.
+      </p>
+
+      <h3>5. High-Speed Video & Experimental Methods</h3>
+      <p>
+        Use of 240+ fps high-speed video, frame-by-frame annotation, and simple kinematic estimation tools
+        to connect theoretical models with real ball–racket interactions on court.
+      </p>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications">
+      <h2>Publications & Working Papers</h2>
+
+      <h3>Peer-Review Submission</h3>
+      <ul>
+        <li>
+          <strong>Kinematic Characterization of a Phase-Reversal Whip (PRW) Forehand: An Exploratory Analysis Using High-Speed Video</strong>  
+          <span class="muted-small">Manuscript submitted to an international peer-reviewed journal (2025).</span>
+        </li>
+      </ul>
+
+      <h3>Technical Notes & Internal Reports</h3>
+      <ul>
+        <li>PRW Forehand Mechanics – Conceptual Whitepaper (v1.0).</li>
+        <li>Whip Dynamics and Handle Traction in Modern Forehand Strokes.</li>
+        <li>Nonlinear Delayed Transmission in the Racket–Arm System.</li>
+      </ul>
+
+      <p class="muted-small">
+        A list of public preprints and technical notes will be added here as documents are finalized.
+      </p>
+    </section>
+
+    <!-- News -->
+    <section id="news">
+      <h2>News & Updates</h2>
+      <ul>
+        <li><strong>Nov 2025</strong> – STDRC domain <code>stdrc.org</code> and initial GitHub Pages site launched.</li>
+        <li><strong>2025</strong> – PRW forehand manuscript submitted for peer review.</li>
+      </ul>
+      <p class="muted-small">
+        This section will record future experiments, collaborations, and conference activities related to tennis dynamics.
+      </p>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        For academic discussion, collaboration ideas, or questions regarding the research,
+        please contact the independent researcher behind STDRC via:
+      </p>
+      <ul>
+        <li>Email: <em>(to be added)</em></li>
+        <li>Location: Shanghai, China</li>
+      </ul>
+      <p class="muted-small">
+        STDRC welcomes communication with researchers in biomechanics, physics, sports engineering, and high-performance coaching.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div>© <span id="year"></span> Shanghai Tennis Dynamics Research Center (STDRC). Independent research initiative.</div>
+  </footer>
+
+  <script>
+    // set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
