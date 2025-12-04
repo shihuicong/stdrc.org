@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>STDRC – Shanghai Tennis Dynamics Research Center</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Shanghai Tennis Dynamics Research Center (STDRC) – Independent research on tennis stroke mechanics, whip dynamics, and nonlinear kinetic systems." />
+  <meta charset="UTF-8">
+  <title>STDRC | Shanghai Tennis Dynamics Research Center</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     :root {
-      --bg: #f7f8fa;
-      --bg-alt: #ffffff;
-      --fg: #111827;
-      --muted: #4b5563;
-      --accent: #115e59;
-      --accent-light: #0f766e;
-      --border: #e5e7eb;
-      --max-width: 980px;
+      --bg: #ffffff;
+      --fg: #111111;
+      --muted: #666666;
+      --border: #e5e5e5;
+      --accent: #0071e3;
+      --max-width: 960px;
     }
 
     * {
@@ -24,10 +21,12 @@
     }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+                   system-ui, -system-ui, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg);
       color: var(--fg);
       line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
 
     a {
@@ -42,176 +41,189 @@
     header {
       position: sticky;
       top: 0;
-      z-index: 20;
-      background: rgba(247, 248, 250, 0.96);
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(12px);
     }
 
     .nav-inner {
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 0.6rem 1.25rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1rem;
+      padding: 12px 20px;
+      font-size: 14px;
     }
 
     .brand {
-      font-weight: 700;
-      font-size: 0.98rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--accent);
-      white-space: nowrap;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      font-size: 14px;
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.9rem;
-      font-size: 0.9rem;
+      gap: 20px;
     }
 
     nav a {
-      color: var(--muted);
+      color: var(--fg);
+      opacity: 0.7;
     }
 
-    nav a:hover {
-      color: var(--accent-light);
+    nav a:hover,
+    nav a:focus {
+      opacity: 1;
     }
 
     main {
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 1.75rem 1.25rem 3rem;
-    }
-
-    section {
-      margin-bottom: 2.5rem;
+      padding: 32px 20px 64px;
     }
 
     .hero {
-      padding: 1.5rem 1.5rem 2rem;
-      background: var(--bg-alt);
-      border-radius: 14px;
-      border: 1px solid var(--border);
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.03);
+      padding: 40px 0 32px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 32px;
     }
 
     .hero-title {
-      font-size: 1.9rem;
-      font-weight: 700;
-      margin-bottom: 0.4rem;
+      font-size: clamp(28px, 4vw, 36px);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
     }
 
     .hero-subtitle {
-      font-size: 0.95rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--accent-light);
-      margin-bottom: 0.8rem;
-      font-weight: 600;
-    }
-
-    .hero-tagline {
-      font-size: 1rem;
+      font-size: 16px;
       color: var(--muted);
-      margin-bottom: 1rem;
-      max-width: 36rem;
+      max-width: 640px;
     }
 
-    .hero-meta {
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-
-    h2 {
-      font-size: 1.25rem;
-      margin-bottom: 0.75rem;
+    section {
+      padding: 32px 0;
       border-bottom: 1px solid var(--border);
-      padding-bottom: 0.35rem;
     }
 
-    h3 {
-      font-size: 1rem;
-      margin-top: 0.6rem;
-      margin-bottom: 0.25rem;
+    section:last-of-type {
+      border-bottom: none;
     }
 
-    p {
-      margin-bottom: 0.5rem;
+    section h2 {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+    }
+
+    section > p.section-intro {
       color: var(--muted);
-      font-size: 0.95rem;
+      margin-bottom: 20px;
+      max-width: 720px;
+      font-size: 15px;
     }
 
-    ul {
-      margin-left: 1.1rem;
-      margin-bottom: 0.5rem;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    li + li {
-      margin-top: 0.2rem;
-    }
-
-    .two-col {
+    .grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-      gap: 1.5rem;
-      align-items: flex-start;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
     }
 
     .card {
-      background: var(--bg-alt);
-      border-radius: 12px;
       border: 1px solid var(--border);
-      padding: 1.1rem 1.25rem;
+      border-radius: 18px;
+      padding: 18px 16px 16px;
     }
 
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      padding: 0.1rem 0.45rem;
-      border-radius: 999px;
-      background: #ecfdf5;
-      color: #047857;
-      font-size: 0.72rem;
+    .card h3 {
+      font-size: 16px;
       font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-left: 0.35rem;
+      margin-bottom: 6px;
     }
 
-    .muted-small {
-      font-size: 0.82rem;
+    .card p {
+      font-size: 14px;
       color: var(--muted);
     }
 
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 1rem 1.25rem 2rem;
-      font-size: 0.8rem;
-      color: var(--muted);
-      text-align: center;
+    .subsection-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-top: 16px;
+      margin-bottom: 4px;
     }
 
-    @media (max-width: 720px) {
+    .subsection-text {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .article-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .article-card {
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .article-card:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .article-card h3 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .article-card p {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 2px;
+    }
+
+    .article-meta {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .about-block {
+      margin-top: 12px;
+      margin-bottom: 12px;
+    }
+
+    .about-block-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .about-block-text {
+      font-size: 14px;
+      color: var(--muted);
+      max-width: 720px;
+    }
+
+    @media (max-width: 640px) {
       .nav-inner {
-        flex-direction: column;
-        align-items: flex-start;
+        padding-inline: 14px;
       }
-      .hero {
-        padding: 1.25rem 1rem 1.5rem;
+
+      nav ul {
+        gap: 14px;
       }
-      .hero-title {
-        font-size: 1.5rem;
-      }
-      .two-col {
-        grid-template-columns: minmax(0, 1fr);
+
+      main {
+        padding-inline: 14px;
       }
     }
   </style>
@@ -219,14 +231,15 @@
 <body>
   <header>
     <div class="nav-inner">
-      <div class="brand">STDRC · Shanghai Tennis Dynamics Research Center</div>
-      <nav>
+      <div class="brand">STDRC</div>
+      <nav aria-label="Primary">
         <ul>
-          <li><a href="#about">About</a></li>
           <li><a href="#research">Research</a></li>
-          <li><a href="#publications">Publications</a></li>
-          <li><a href="#news">News</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#prw-forehand">PRW Forehand</a></li>
+          <li><a href="#kinematics-lab">Kinematics Lab</a></li>
+          <li><a href="#dynamics-theory">Dynamics Theory</a></li>
+          <li><a href="#articles">Articles</a></li>
+          <li><a href="#about">About</a></li>
         </ul>
       </nav>
     </div>
@@ -234,150 +247,348 @@
 
   <main>
     <!-- Hero -->
-    <section class="hero">
-      <div class="hero-subtitle">Independent Tennis Science Initiative</div>
-      <h1 class="hero-title">Shanghai Tennis Dynamics Research Center (STDRC)</h1>
-      <p class="hero-tagline">
-        Independent research on tennis stroke mechanics, whip dynamics, and nonlinear kinetic systems,
-        integrating high-speed video analysis, physics-based modelling, and on-court experiments.
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title" class="hero-title">
+        Shanghai Tennis Dynamics Research Center
+      </h1>
+      <p class="hero-subtitle">
+        An independent initiative focused on the physics of modern tennis strokes,
+        combining kinematics, biomechanics, and momentum-based models to understand
+        how power and control emerge on court.
       </p>
-      <p class="hero-meta">
-        STDRC currently focuses on <strong>PRW forehand theory</strong>, <strong>whip-like acceleration mechanisms</strong>,
-        racket–arm <strong>nonlinear transmission</strong>, and <strong>dual-handed stroke development</strong>.
-      </p>
-    </section>
-
-    <!-- About -->
-    <section id="about">
-      <h2>About STDRC</h2>
-      <div class="two-col">
-        <div>
-          <p>
-            The Shanghai Tennis Dynamics Research Center (STDRC) is an independent, non-commercial research project
-            devoted to the scientific study of tennis stroke mechanics. The center adopts a virtual laboratory model:
-            there is no formal institutional affiliation; all work is conducted by an individual researcher with
-            a background in engineering, physics-thinking, and intensive on-court practice.
-          </p>
-          <p>
-            STDRC aims to build explanatory frameworks for modern tennis strokes using concepts from
-            dynamics, nonlinear systems, and angular momentum transfer. Rather than offering coaching tips,
-            the center focuses on <em>mechanistic understanding</em> that can inform technique design,
-            equipment development, and training methodology.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Current Focus Areas</h3>
-          <ul>
-            <li>Phase-Reversal Whip (PRW) forehand mechanics</li>
-            <li>Racket-head lag and multi-stage acceleration</li>
-            <li>Nonlinear delayed transmission in racket–arm systems</li>
-            <li>Dual-handed (“two-racquet”) stroke development</li>
-            <li>High-speed video analysis and kinematic reconstruction</li>
-          </ul>
-          <p class="muted-small">
-            STDRC is a virtual research center, not a registered institution or commercial entity.
-          </p>
-        </div>
-      </div>
     </section>
 
     <!-- Research -->
-    <section id="research">
-      <h2>Research Themes</h2>
-
-      <h3>1. PRW Forehand Theory <span class="badge">PRW</span></h3>
-      <p>
-        Development of the Phase-Reversal Whip (PRW) model for modern forehand strokes, characterizing how
-        the racket axis reverses relative to the arm and how this reversal creates a whip-like release
-        of angular momentum at impact.
+    <section id="research" aria-labelledby="research-title">
+      <h2 id="research-title">Research</h2>
+      <p class="section-intro">
+        Exploring the mechanics of contemporary tennis strokes through high-speed
+        motion analysis and physics-based modeling.
       </p>
 
-      <h3>2. Whip Dynamics & Racket Lag</h3>
-      <p>
-        Analysis of multi-phase acceleration, centripetal-force driven speed amplification, and the role
-        of handle traction in generating peak racket-head speed with minimal muscular effort.
-      </p>
+      <div class="grid">
+        <article class="card">
+          <h3>Forehand Dynamics</h3>
+          <p>
+            Understanding the modern forehand as a momentum-driven, multi-stage
+            acceleration system.
+          </p>
+        </article>
 
-      <h3>3. Nonlinear Transmission Systems</h3>
-      <p>
-        Modelling the racket–arm–torso chain as a nonlinear delayed transmission system, with emphasis on
-        how loading, unloading, and phase delay create non-intuitive kinematic patterns in high-level strokes.
-      </p>
+        <article class="card">
+          <h3>Phase-Reversal Whip (PRW)</h3>
+          <p>
+            A newly identified forehand acceleration mode characterized by phase
+            reversal and whip-like release.
+          </p>
+        </article>
 
-      <h3>4. Dual-Handed Stroke Development</h3>
-      <p>
-        Experimental work using both left and right hands (dual-racquet training) to study bilateral
-        learning transfer, coordination symmetry, and robustness of technique under asymmetric constraints.
-      </p>
+        <article class="card">
+          <h3>Angular Momentum Transfer</h3>
+          <p>
+            How the body generates, stores, and transmits angular momentum to the
+            racket throughout the stroke.
+          </p>
+        </article>
 
-      <h3>5. High-Speed Video & Experimental Methods</h3>
-      <p>
-        Use of 240+ fps high-speed video, frame-by-frame annotation, and simple kinematic estimation tools
-        to connect theoretical models with real ball–racket interactions on court.
-      </p>
+        <article class="card">
+          <h3>Double-Circle Trajectory</h3>
+          <p>
+            Two interacting arcs&mdash;body-led and racket-led&mdash;forming the
+            foundation of high-speed forehand mechanics.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Bimanual Stroke Mechanics</h3>
+          <p>
+            Comparative analysis of right- and left-hand strokes to reveal
+            neuromuscular symmetry and coupling.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>High-Speed Kinematics</h3>
+          <p>
+            240fps motion capture for analyzing racket paths, phase timing, and
+            acceleration signatures.
+          </p>
+        </article>
+      </div>
     </section>
 
-    <!-- Publications -->
-    <section id="publications">
-      <h2>Publications & Working Papers</h2>
-
-      <h3>Peer-Review Submission</h3>
-      <ul>
-        <li>
-          <strong>Kinematic Characterization of a Phase-Reversal Whip (PRW) Forehand: An Exploratory Analysis Using High-Speed Video</strong>  
-          <span class="muted-small">Manuscript submitted to an international peer-reviewed journal (2025).</span>
-        </li>
-      </ul>
-
-      <h3>Technical Notes & Internal Reports</h3>
-      <ul>
-        <li>PRW Forehand Mechanics – Conceptual Whitepaper (v1.0).</li>
-        <li>Whip Dynamics and Handle Traction in Modern Forehand Strokes.</li>
-        <li>Nonlinear Delayed Transmission in the Racket–Arm System.</li>
-      </ul>
-
-      <p class="muted-small">
-        A list of public preprints and technical notes will be added here as documents are finalized.
+    <!-- PRW Forehand -->
+    <section id="prw-forehand" aria-labelledby="prw-title">
+      <h2 id="prw-title">PRW Forehand</h2>
+      <p class="section-intro">
+        A distinctive acceleration mechanism emerging from modern high-velocity
+        tennis strokes.
       </p>
+
+      <div class="about-block">
+        <div class="about-block-title">Overview</div>
+        <p class="about-block-text">
+          The Phase-Reversal Whip (PRW) forehand features a rapid transition from
+          backward orientation to forward acceleration, creating a whip-like
+          release of angular velocity. This phase-reversal signature distinguishes
+          PRW from conventional forehand models.
+        </p>
+      </div>
+
+      <div class="about-block">
+        <div class="about-block-title">Kinematic Phases</div>
+        <p class="subsection-title">Phase I — Backward Loading</p>
+        <p class="subsection-text">
+          The racket axis rotates backward relative to the arm, establishing
+          delayed tension and torque potential.
+        </p>
+
+        <p class="subsection-title">Phase II — Phase Reversal</p>
+        <p class="subsection-text">
+          The racket transitions from backward-facing to forward-facing while the
+          arm is still in the early forward swing.
+        </p>
+
+        <p class="subsection-title">Phase III — Whip Acceleration</p>
+        <p class="subsection-text">
+          A rapid surge of angular velocity as delayed torque is released into the
+          racket head.
+        </p>
+
+        <p class="subsection-title">Phase IV — Terminal Release</p>
+        <p class="subsection-text">
+          Final acceleration and contact, characterized by high head speed and
+          stable directional control.
+        </p>
+      </div>
+
+      <div class="about-block">
+        <div class="about-block-title">Comparison with Conventional Forehands</div>
+        <p class="about-block-text">
+          Unlike traditional L-shaped or ATP forehands, PRW features earlier
+          backward loading, a distinct reversal phase, high angular acceleration
+          within a compact path, and potentially enhanced energy transfer
+          efficiency.
+        </p>
+      </div>
+
+      <div class="about-block">
+        <div class="about-block-title">Sample High-Speed Clips</div>
+        <p class="about-block-text">
+          Coming soon: 240fps clips demonstrating the PRW signature, racket-axis
+          reversal, and whip-like acceleration.
+        </p>
+      </div>
+
+      <div class="about-block">
+        <div class="about-block-title">Working Papers &amp; Submissions</div>
+        <p class="about-block-text">
+          &bull; <em>PRW Forehand: Kinematic Characterization and Phase Interaction</em> (submitted manuscript)<br>
+          &bull; <em>PRW Forehand Working Paper v1.0</em>
+        </p>
+      </div>
     </section>
 
-    <!-- News -->
-    <section id="news">
-      <h2>News & Updates</h2>
-      <ul>
-        <li><strong>Nov 2025</strong> – STDRC domain <code>stdrc.org</code> and initial GitHub Pages site launched.</li>
-        <li><strong>2025</strong> – PRW forehand manuscript submitted for peer review.</li>
-      </ul>
-      <p class="muted-small">
-        This section will record future experiments, collaborations, and conference activities related to tennis dynamics.
+    <!-- Kinematics Lab -->
+    <section id="kinematics-lab" aria-labelledby="lab-title">
+      <h2 id="lab-title">Kinematics Lab</h2>
+      <p class="section-intro">
+        High-speed motion analysis for understanding racket-path mechanics and
+        acceleration signatures.
       </p>
+
+      <div class="about-block">
+        <div class="about-block-title">Motion Capture Notes</div>
+        <p class="about-block-text">
+          240fps smartphone capture methods, recommended lighting and angles,
+          frame-by-frame extraction, and axis stabilization form the basis of our
+          kinematic measurements.
+        </p>
+      </div>
+
+      <div class="about-block">
+        <div class="about-block-title">Overlay Experiments</div>
+        <p class="about-block-text">
+          Racket trajectory tracing, phase timing annotation, angular change
+          visualization, and comparative motion overlays help reveal subtle
+          acceleration patterns that are not visible in real time.
+        </p>
+      </div>
+
+      <div class="about-block">
+        <div class="about-block-title">Tools &amp; Methods</div>
+        <p class="about-block-text">
+          Our workflow includes Kinovea for motion analysis, manual path
+          extraction, and preliminary scripting for quantitative comparison across
+          strokes and sessions.
+        </p>
+      </div>
+
+      <div class="about-block">
+        <div class="about-block-title">Case Study Clips</div>
+        <p class="about-block-text">
+          Selected examples will highlight PRW vs non-PRW strokes, left-hand vs
+          right-hand symmetry, and early vs late acceleration patterns.
+        </p>
+      </div>
     </section>
 
-  <!-- Contact -->
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>
-        For academic discussion, collaboration ideas, or questions regarding the research,
-        please contact the independent researcher behind STDRC via:
+    <!-- Dynamics Theory -->
+    <section id="dynamics-theory" aria-labelledby="theory-title">
+      <h2 id="theory-title">Dynamics Theory</h2>
+      <p class="section-intro">
+        Fundamental principles behind acceleration, control, and momentum flow in
+        modern tennis strokes.
       </p>
-      <ul>
-        <li>Email: <a href="mailto:gnociuh@gmail.com">gnociuh@gmail.com</a></li>
-        <li>Location: Shanghai, China</li>
-      </ul>
-      <p class="muted-small">
-        STDRC welcomes communication with researchers in biomechanics, physics, sports engineering, and high-performance coaching.
+
+      <div class="grid">
+        <article class="card">
+          <h3>Axial Traction Model</h3>
+          <p>
+            Applying axial pulling force on the racket handle enhances head
+            acceleration through torque balance and angular leverage.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Whip Acceleration Mechanism</h3>
+          <p>
+            A nonlinear multi-stage loading system combining delayed tension,
+            phase reversal, and rapid angular release.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Momentum Pathways</h3>
+          <p>
+            How the body&rsquo;s rotational energy moves through the torso,
+            shoulder, arm, and into the racket.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Error-Tolerance Theory</h3>
+          <p>
+            Why delayed-phase strokes improve timing robustness and allow for
+            greater directional stability.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Body–Racket Interaction</h3>
+          <p>
+            Ground reaction forces, torque compensation, and rotational balance
+            shaping racket-head speed.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Bimanual Symmetry</h3>
+          <p>
+            Insights gained from left-hand forehand practice revealing neuromotor
+            balance and stroke architecture.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Articles -->
+    <section id="articles" aria-labelledby="articles-title">
+      <h2 id="articles-title">Articles</h2>
+      <p class="section-intro">
+        Short essays, research notes, and technical observations from ongoing
+        studies at STDRC.
       </p>
+
+      <div class="article-list">
+        <article class="article-card">
+          <h3>The Physics Behind Whip Acceleration</h3>
+          <p>
+            A simplified explanation of how phase-delayed loading produces
+            explosive racket-head speed in modern forehands.
+          </p>
+          <p class="article-meta">Estimated reading time: 4 min</p>
+        </article>
+
+        <article class="article-card">
+          <h3>How Axial Traction Increases Power</h3>
+          <p>
+            Why pulling the handle in the axial direction changes the energy
+            transfer pathway from body to racket.
+          </p>
+          <p class="article-meta">Estimated reading time: 5 min</p>
+        </article>
+
+        <article class="article-card">
+          <h3>Increasing Error Tolerance in Modern Forehands</h3>
+          <p>
+            Understanding how delayed phases stabilize timing and directional
+            accuracy under real-play conditions.
+          </p>
+          <p class="article-meta">Estimated reading time: 3 min</p>
+        </article>
+
+        <article class="article-card">
+          <h3>Bimanual Training and Neural Coupling</h3>
+          <p>
+            What left-hand training reveals about the brain&rsquo;s control and
+            coordination of tennis strokes.
+          </p>
+          <p class="article-meta">Estimated reading time: 6 min</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" aria-labelledby="about-title">
+      <h2 id="about-title">About</h2>
+
+      <div class="about-block">
+        <div class="about-block-title">STDRC</div>
+        <p class="about-block-text">
+          Shanghai Tennis Dynamics Research Center is an independent research
+          initiative dedicated to studying tennis stroke mechanics through
+          physics-based analysis.
+        </p>
+      </div>
+
+      <div class="about-block">
+        <div class="about-block-title">Mission</div>
+        <p class="about-block-text">
+          To advance the scientific understanding of tennis dynamics by integrating
+          biomechanics, kinematics, and momentum-driven models, with a focus on
+          modern forehand mechanics.
+        </p>
+      </div>
+
+      <div class="about-block">
+        <div class="about-block-title">Founder</div>
+        <p class="about-block-text">
+          <strong>James Huicong Shi</strong><br>
+          Independent tennis dynamics researcher based in Shanghai.<br>
+          Research interests include forehand acceleration mechanics, angular
+          momentum transfer, whip-like phase interaction, and high-speed
+          racket-path analysis.
+        </p>
+      </div>
+
+      <div class="about-block">
+        <div class="about-block-title">What We Study</div>
+        <p class="about-block-text">
+          &bull; Racket and body dynamics<br>
+          &bull; Phase-based acceleration models<br>
+          &bull; High-speed forehand mechanics<br>
+          &bull; Symmetry and neural coupling in stroke production
+        </p>
+      </div>
+
+      <div class="about-block">
+        <div class="about-block-title">Contact</div>
+        <p class="about-block-text">
+          Email: <a href="mailto:gnociuh@gmail.com">gnociuh@gmail.com</a>
+        </p>
+      </div>
     </section>
   </main>
-
-
-  <footer>
-    <div>© <span id="year"></span> Shanghai Tennis Dynamics Research Center (STDRC). Independent research initiative.</div>
-  </footer>
-
-  <script>
-    // set current year in footer
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
