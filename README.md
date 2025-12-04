@@ -61,3 +61,14 @@ Contact: **gnociuh@gmail.com**
 ## 🌐 Deployment
 
 The site is published using **GitHub Pages**:
+https://your-github-username.github.io/stdrc
+With an optional custom domain:
+https://stdrc.org
+No build tools or frameworks are required — the site is fully static and lightweight.
+
+---
+
+## 📜 License
+
+All text and research content © STDRC (James Huicong Shi).  
+Do not reproduce without permission.
