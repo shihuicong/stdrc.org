@@ -26,27 +26,19 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB",
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC",
                    "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
       background: var(--bg);
       color: var(--fg);
       line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
     }
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
     header {
       position: sticky;
       top: 0;
-      z-index: 10;
       background: rgba(255,255,255,0.9);
       backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
@@ -59,42 +51,13 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 16px;
-      font-size: 14px;
-    }
-
-    .brand {
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      white-space: nowrap;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 18px;
       flex-wrap: wrap;
-      justify-content: flex-end;
+      gap: 10px;
     }
 
-    nav a {
-      color: var(--fg);
-      opacity: 0.75;
-    }
+    nav { display: flex; gap: 16px; flex-wrap: wrap; }
 
-    nav a:hover {
-      opacity: 1;
-    }
-
-    .lang-switch a {
-      opacity: 1;
-      font-weight: 600;
-    }
-
-    .lang-switch .muted {
-      color: var(--muted);
-      font-weight: 500;
-    }
+    .brand { font-weight: 600; }
 
     main {
       max-width: var(--max-width);
@@ -102,74 +65,17 @@
       padding: 32px 20px 64px;
     }
 
-    .hero {
-      padding: 44px 0 32px;
-      border-bottom: 1px solid var(--border);
-      margin-bottom: 32px;
-    }
-
-    .hero-title {
-      font-size: clamp(30px, 4vw, 38px);
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      margin-bottom: 12px;
-    }
-
-    .hero-subtitle {
-      font-size: 16px;
-      color: var(--muted);
-      max-width: 760px;
-    }
-
     section {
       padding: 32px 0;
       border-bottom: 1px solid var(--border);
     }
 
-    section:last-of-type {
-      border-bottom: none;
-    }
-
-    h2 {
-      font-size: 22px;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      margin-bottom: 8px;
-    }
+    h2 { font-size: 22px; margin-bottom: 10px; }
 
     .section-intro {
       color: var(--muted);
-      margin-bottom: 20px;
-      max-width: 760px;
-      font-size: 15px;
-    }
-
-    .paper-box {
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 20px 18px;
-      background: #fafafa;
-    }
-
-    .paper-label {
-      font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 8px;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-    }
-
-    .paper-title {
-      font-size: 18px;
-      font-weight: 600;
-      line-height: 1.55;
-      margin-bottom: 12px;
-    }
-
-    .paper-meta {
-      font-size: 14px;
-      color: var(--muted);
-      margin-bottom: 10px;
+      margin-bottom: 18px;
+      max-width: 780px;
     }
 
     .grid {
@@ -180,408 +86,224 @@
 
     .card {
       border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 18px 16px 16px;
+      border-radius: 16px;
+      padding: 16px;
     }
 
-    .card h3 {
-      font-size: 16px;
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
+    .card h3 { font-size: 16px; margin-bottom: 6px; }
+    .card p { font-size: 14px; color: var(--muted); }
 
-    .card p {
-      font-size: 14px;
-      color: var(--muted);
-    }
+    .block { margin-top: 12px; }
+    .block-title { font-weight: 600; margin-bottom: 4px; }
+    .block-text { color: var(--muted); }
 
-    .block {
-      margin-top: 14px;
-      margin-bottom: 14px;
-    }
-
-    .block-title {
-      font-size: 15px;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .block-text {
-      font-size: 14px;
-      color: var(--muted);
-      max-width: 760px;
-    }
-
-    .subsection-title {
-      font-size: 16px;
-      font-weight: 600;
-      margin-top: 16px;
-      margin-bottom: 4px;
-    }
-
-    .subsection-text {
-      font-size: 14px;
-      color: var(--muted);
-      max-width: 760px;
-    }
-
-    .article-list {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .article-card {
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .article-card:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-
-    .article-card h3 {
-      font-size: 15px;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .article-card p {
-      font-size: 14px;
-      color: var(--muted);
-      max-width: 760px;
-    }
+    .subsection-title { margin-top: 14px; font-weight: 600; }
+    .subsection-text { color: var(--muted); }
 
     footer {
-      padding: 28px 0;
-      border-top: 1px solid var(--border);
+      padding: 24px 0;
       text-align: center;
       font-size: 13px;
       color: #777;
-      margin-top: 40px;
-    }
-
-    @media (max-width: 760px) {
-      .nav-inner {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      nav {
-        justify-content: flex-start;
-      }
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <div class="nav-inner">
-      <div class="brand">STDRC</div>
-      <nav aria-label="Primary">
-        <a href="#latest-paper">最新论文</a>
-        <a href="#research">研究方向</a>
-        <a href="#momentum-model">动量模型</a>
-        <a href="#prw-forehand">PRW 正手</a>
-        <a href="#dynamics-theory">动力学理论</a>
-        <a href="#articles">文章</a>
-        <a href="#about">关于</a>
-        <span class="lang-switch">
-          <a class="muted" href="index.html">EN</a> /
-          <a href="cn.html">中文</a>
-        </span>
-      </nav>
+
+<header>
+  <div class="nav-inner">
+    <div class="brand">STDRC</div>
+    <nav>
+      <a href="#latest-paper">最新论文</a>
+      <a href="#research">研究方向</a>
+      <a href="#momentum-model">动量模型</a>
+      <a href="#prw-forehand">PRW正手</a>
+      <a href="#dynamics-theory">动力学理论</a>
+      <a href="#articles">文章</a>
+      <a href="#about">关于</a>
+      <a href="index.html">EN</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section>
+  <h2>上海网球动力学研究中心</h2>
+  <p class="section-intro">
+    STDRC 是一个独立研究项目，从物理学视角研究现代网球击球机制，
+    重点关注动量流动、时变惯量以及非线性相位结构。
+  </p>
+</section>
+
+<section id="latest-paper">
+  <h2>最新论文</h2>
+  <p class="section-intro">近期公开研究成果：</p>
+
+  <div class="card">
+    <h3>高质量网球击球的动量重分配框架</h3>
+    <p>
+      A Momentum-Redistribution Framework for High-Quality Tennis Strokes
+    </p>
+    <p>DOI: 10.51224/SportRxiv.763</p>
+    <a href="https://doi.org/10.51224/SportRxiv.763" target="_blank">查看论文</a>
+  </div>
+</section>
+
+<section id="research">
+  <h2>研究方向</h2>
+  <p class="section-intro">
+    研究以动量为核心，从系统层面解释网球击球的动力学机制。
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>动量击球框架</h3>
+      <p>将击球视为动量输入、重分配与放大的过程。</p>
     </div>
-  </header>
 
-  <main>
-    <section class="hero">
-      <h1 class="hero-title">上海网球动力学研究中心</h1>
-      <p class="hero-subtitle">
-        STDRC 是一个独立研究项目，关注现代网球击球动作中的物理学问题，
-        尝试通过运动学、生物力学和基于动量的理论框架，解释击球中的力量形成与控制机制。
-      </p>
-    </section>
+    <div class="card">
+      <h3>DDMR 动量重分配</h3>
+      <p>近端减速促进动量向远端传递。</p>
+    </div>
 
-    <section id="latest-paper">
-      <h2>最新论文</h2>
-      <p class="section-intro">
-        近期公开发表的研究成果。
-      </p>
-      <div class="paper-box">
-        <div class="paper-label">SportRxiv 预印本</div>
-        <div class="paper-title">
-          A Momentum-Redistribution Framework for High-Quality Tennis Strokes:
-          Conceptual Integration of Deceleration-Driven Momentum Redistribution
-          and Inertia-Guided Angular Acceleration
-        </div>
-        <div class="paper-meta">DOI: 10.51224/SportRxiv.763</div>
-        <a href="https://doi.org/10.51224/SportRxiv.763" target="_blank" rel="noopener noreferrer">查看论文</a>
-      </div>
-    </section>
+    <div class="card">
+      <h3>IGAA 惯量引导加速</h3>
+      <p>时变惯量决定角速度放大过程。</p>
+    </div>
 
-    <section id="research">
-      <h2>研究方向</h2>
-      <p class="section-intro">
-        通过物理建模、高速视频分析和概念框架研究现代网球击球动作的动力学机制。
-      </p>
+    <div class="card">
+      <h3>PRW 正手机制</h3>
+      <p>相位反转 + 鞭打 + 向心力增益。</p>
+    </div>
 
-      <div class="grid">
-        <article class="card">
-          <h3>动量传递击球模型</h3>
-          <p>
-            将击球理解为一个分阶段的动量过程：地面驱动输入、近端环节选择性减速，
-            以及晚期将动量集中表达为拍头速度。
-          </p>
-        </article>
+    <div class="card">
+      <h3>有效旋转组件</h3>
+      <p>旋转轴随运动不断迁移。</p>
+    </div>
 
-        <article class="card">
-          <h3>正手动力学</h3>
-          <p>
-            将现代正手理解为一个由动量驱动的多阶段加速系统。
-          </p>
-        </article>
+    <div class="card">
+      <h3>二刀流击球</h3>
+      <p>左右手击球的协同机制与潜在优势。</p>
+    </div>
 
-        <article class="card">
-          <h3>PRW 正手</h3>
-          <p>
-            一种以相位反转、鞭打式释放及后期向心力增益为特征的正手加速模式。
-          </p>
-        </article>
+    <div class="card">
+      <h3>神经适应</h3>
+      <p>高速击球对协调控制系统的影响。</p>
+    </div>
+  </div>
+</section>
 
-        <article class="card">
-          <h3>角动量传递</h3>
-          <p>
-            研究身体如何生成、储存并向球拍传递角动量，包括非持拍手收回和躯干转动惯量变化的作用。
-          </p>
-        </article>
+<section id="momentum-model">
+  <h2>动量模型</h2>
 
-        <article class="card">
-          <h3>双圆轨迹模型</h3>
-          <p>
-            以身体主导轨迹与球拍主导轨迹两个相互作用的圆弧解释高速击球运动学。
-          </p>
-        </article>
+  <div class="block">
+    <div class="block-title">核心思想</div>
+    <p class="block-text">
+      击球本质不是发力，而是动量在系统中的重新分配。
+    </p>
+  </div>
 
-        <article class="card">
-          <h3>高速运动学分析</h3>
-          <p>
-            利用 240fps 视频分析拍头轨迹、相位时序与加速度特征。
-          </p>
-        </article>
-      </div>
-    </section>
+  <div class="block">
+    <div class="block-title">三阶段</div>
 
-    <section id="momentum-model">
-      <h2>动量模型</h2>
-      <p class="section-intro">
-        以“动量输入—动量集中—动量释放”为主线描述网球击球，
-        强调身体如何通过减少有效运动质量来放大拍头速度。
-      </p>
+    <p class="subsection-title">1. 动量输入</p>
+    <p class="subsection-text">来自地面反作用力。</p>
 
-      <div class="block">
-        <div class="block-title">核心思想</div>
-        <p class="block-text">
-          击球并不是简单地“一路向前推”。力量的形成来自于球员通过下肢和躯干向系统注入动量，
-          随后逐步让近端环节退出主导运动，使更大比例的系统动量以远端拍头运动的形式表达出来。
-        </p>
-      </div>
+    <p class="subsection-title">2. 动量重分配</p>
+    <p class="subsection-text">通过减速实现。</p>
 
-      <div class="block">
-        <div class="block-title">三阶段结构</div>
+    <p class="subsection-title">3. 惯量放大</p>
+    <p class="subsection-text">拍头速度快速提升。</p>
+  </div>
+</section>
 
-        <p class="subsection-title">阶段 I —— 动量输入（地面与躯干）</p>
-        <p class="subsection-text">
-          地面反作用力与躯干旋转构成初始冲量和角动量储备。
-        </p>
+<section id="prw-forehand">
+  <h2>PRW 正手</h2>
 
-        <p class="subsection-title">阶段 II —— 动量集中（选择性减速）</p>
-        <p class="subsection-text">
-          近端结构部分减速或“退出”，从而降低有效转动惯量，使动量向手臂—球拍子系统重新分配。
-        </p>
+  <div class="block">
+    <div class="block-title">概述</div>
+    <p class="block-text">
+      PRW 正手表现为伪静止区间、相位反转和后期向心力增益。
+    </p>
+  </div>
 
-        <p class="subsection-title">阶段 III —— 动量释放（拍头表达）</p>
-        <p class="subsection-text">
-          在握拍摩擦、拍柄牵引和弧线路径向心加载等约束条件下，重新分配后的动量在击球前后表现为拍头角速度的快速跃升。
-        </p>
-      </div>
+  <div class="block">
+    <div class="block-title">阶段</div>
 
-      <div class="block">
-        <div class="block-title">可观察特征</div>
-        <p class="block-text">
-          该模型预测在 240fps 视频中可以看到：躯干与球拍之间的相位滞后、晚期加速度峰值，
-          以及击球区附近更紧凑的高速轨迹弧线。
-        </p>
-      </div>
+    <p class="subsection-title">阶段1：9→6伪静止</p>
+    <p class="subsection-text">拍头相对稳定。</p>
 
-      <div class="block">
-        <div class="block-title">与 PRW / DDMR / IGAA 的关系</div>
-        <p class="block-text">
-          PRW 可以看作动量集中过程的一种运动学体现。DDMR 强调减速如何促成动量重分配，
-          IGAA 强调时变转动惯量如何塑造最终的角加速度表现。
-        </p>
-      </div>
-    </section>
+    <p class="subsection-title">阶段2：相位反转</p>
+    <p class="subsection-text">完成180°翻转。</p>
 
-    <section id="prw-forehand">
-      <h2>PRW 正手</h2>
-      <p class="section-intro">
-        一种出现在高速现代正手中的特殊加速机制。
-      </p>
+    <p class="subsection-title">阶段3：鞭打</p>
+    <p class="subsection-text">角速度快速上升。</p>
 
-      <div class="block">
-        <div class="block-title">概述</div>
-        <p class="block-text">
-          PRW 正手的特征包括：球拍后向加载、相对手臂的快速轴向反转，以及鞭打式角速度释放。
-          在后期阶段，球拍沿曲线路径运行时产生的向心加载，会进一步增强拍头速度与击球稳定性。
-        </p>
-      </div>
+    <p class="subsection-title">阶段4：向心力增益</p>
+    <p class="subsection-text">形成最终速度提升。</p>
+  </div>
+</section>
 
-      <div class="block">
-        <div class="block-title">阶段划分</div>
+<section id="dynamics-theory">
+  <h2>动力学理论</h2>
 
-        <p class="subsection-title">阶段 I —— 后向加载</p>
-        <p class="subsection-text">
-          球拍轴相对手臂向后转动，身体继续蓄积旋转势能。
-        </p>
+  <div class="grid">
+    <div class="card"><h3>开放系统</h3><p>动量来自外部输入。</p></div>
+    <div class="card"><h3>惯量变化</h3><p>影响加速效率。</p></div>
+    <div class="card"><h3>旋转轴迁移</h3><p>动态变化。</p></div>
+    <div class="card"><h3>轴向力主导</h3><p>优于扭矩。</p></div>
+    <div class="card"><h3>损伤机制</h3><p>错位导致应力。</p></div>
+    <div class="card"><h3>非线性相位</h3><p>决定击球效率。</p></div>
+  </div>
+</section>
 
-        <p class="subsection-title">阶段 II —— 轴向反转</p>
-        <p class="subsection-text">
-          球拍由后向朝前快速反转，而手臂仍处于向前旋转早期。
-        </p>
+<section id="articles">
+  <h2>文章</h2>
 
-        <p class="subsection-title">阶段 III —— 鞭打加速</p>
-        <p class="subsection-text">
-          延迟张力释放，拍头角速度快速上升。
-        </p>
+  <div class="article-list">
+    <div class="article-card">
+      <h3>动量集中机制</h3>
+      <p>解释拍头速度来源。</p>
+    </div>
 
-        <p class="subsection-title">阶段 IV —— 向心力增益</p>
-        <p class="subsection-text">
-          球拍沿弧线运行时，手部内向约束产生向心加载，对速度和击球稳定性形成进一步强化。
-        </p>
-      </div>
-    </section>
+    <div class="article-card">
+      <h3>动量路径</h3>
+      <p>动量如何流动。</p>
+    </div>
 
-    <section id="dynamics-theory">
-      <h2>动力学理论</h2>
-      <p class="section-intro">
-        现代网球击球中与加速、控制和动量流动相关的基础理论。
-      </p>
+    <div class="article-card">
+      <h3>左右手训练</h3>
+      <p>双侧击球与神经适应。</p>
+    </div>
+  </div>
+</section>
 
-      <div class="grid">
-        <article class="card">
-          <h3>减速驱动的动量重分配（DDMR）</h3>
-          <p>
-            近端环节的受控减速会使更多角动量重新分配到远端结构，从而提高拍头端的动量表达比例。
-          </p>
-        </article>
+<section id="about">
+  <h2>关于</h2>
 
-        <article class="card">
-          <h3>惯量引导的角加速（IGAA）</h3>
-          <p>
-            时变有效转动惯量和约束条件的演化，共同决定了重分配后的动量如何转化为快速角加速。
-          </p>
-        </article>
+  <div class="block">
+    <div class="block-title">STDRC</div>
+    <p class="block-text">独立网球动力学研究项目。</p>
+  </div>
 
-        <article class="card">
-          <h3>拍柄轴向牵引模型</h3>
-          <p>
-            沿拍柄轴线方向的牵引可提高杠杆效率、摩擦加载及动量传递效率。
-          </p>
-        </article>
+  <div class="block">
+    <div class="block-title">创始人</div>
+    <p class="block-text">James Huicong Shi</p>
+  </div>
 
-        <article class="card">
-          <h3>鞭打加速机制</h3>
-          <p>
-            一种结合延迟张力、快速相位反转和鞭打式释放的多阶段非线性加速过程。
-          </p>
-        </article>
+  <div class="block">
+    <div class="block-title">联系方式</div>
+    <p class="block-text">gnociuh@gmail.com</p>
+  </div>
+</section>
 
-        <article class="card">
-          <h3>动量路径</h3>
-          <p>
-            身体旋转如何经由躯干、肩、臂传导到球拍。
-          </p>
-        </article>
+</main>
 
-        <article class="card">
-          <h3>容错性理论</h3>
-          <p>
-            延迟阶段和紧凑高速弧线如何改善击球时序鲁棒性与方向稳定性。
-          </p>
-        </article>
-      </div>
-    </section>
+<footer>
+  © 2025 STDRC — Shanghai Tennis Dynamics Research Center.
+</footer>
 
-    <section id="articles">
-      <h2>文章</h2>
-      <p class="section-intro">
-        研究笔记、短文与持续更新中的技术观察。
-      </p>
-
-      <div class="article-list">
-        <article class="article-card">
-          <h3>网球击球中的动量集中：一个极简框架</h3>
-          <p>
-            为什么减少有效运动质量是现代高速击球的关键。
-          </p>
-        </article>
-
-        <article class="article-card">
-          <h3>从地面冲量到拍头速度：动量究竟去了哪里</h3>
-          <p>
-            对击球动量路径的定性拆解，以及为什么“持续向前推”并不能完整解释击球力量。
-          </p>
-        </article>
-
-        <article class="article-card">
-          <h3>高速正手中的晚期加速特征</h3>
-          <p>
-            在 240fps 视频里，如何识别动量被成功集中到球拍上的关键迹象。
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section id="about">
-      <h2>关于</h2>
-
-      <div class="block">
-        <div class="block-title">STDRC</div>
-        <p class="block-text">
-          上海网球动力学研究中心（STDRC）是一个独立研究项目，
-          致力于从物理学视角研究网球击球动作的动力学机制。
-        </p>
-      </div>
-
-      <div class="block">
-        <div class="block-title">使命</div>
-        <p class="block-text">
-          通过整合生物力学、运动学与基于动量的理论模型，
-          推进对现代网球击球机制的科学理解。
-        </p>
-      </div>
-
-      <div class="block">
-        <div class="block-title">创始人</div>
-        <p class="block-text">
-          <strong>James Huicong Shi</strong><br>
-          独立网球动力学研究者，现居上海。
-        </p>
-      </div>
-
-      <div class="block">
-        <div class="block-title">联系方式</div>
-        <p class="block-text">
-          邮箱：<a href="mailto:gnociuh@gmail.com">gnociuh@gmail.com</a>
-        </p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    © 2026 STDRC — Shanghai Tennis Dynamics Research Center.<br>
-    All rights reserved.
-  </footer>
 </body>
 </html>
