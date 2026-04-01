@@ -16,7 +16,7 @@
       --muted: #666666;
       --border: #e5e5e5;
       --accent: #0071e3;
-      --max-width: 960px;
+      --max-width: 980px;
     }
 
     * {
@@ -28,7 +28,7 @@
     body {
       font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
                    system-ui, -system-ui, "Helvetica Neue", Arial, sans-serif;
-      background-color: var(--bg);
+      background: var(--bg);
       color: var(--fg);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
@@ -47,7 +47,7 @@
       position: sticky;
       top: 0;
       z-index: 10;
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255,255,255,0.9);
       backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
     }
@@ -55,34 +55,45 @@
     .nav-inner {
       max-width: var(--max-width);
       margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
       padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
       font-size: 14px;
     }
 
     .brand {
       font-weight: 600;
       letter-spacing: 0.04em;
-      font-size: 14px;
+      white-space: nowrap;
     }
 
-    nav ul {
-      list-style: none;
+    nav {
       display: flex;
-      gap: 20px;
+      align-items: center;
+      gap: 18px;
       flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
     nav a {
       color: var(--fg);
-      opacity: 0.7;
+      opacity: 0.75;
     }
 
-    nav a:hover,
-    nav a:focus {
+    nav a:hover {
       opacity: 1;
+    }
+
+    .lang-switch a {
+      opacity: 1;
+      font-weight: 600;
+    }
+
+    .lang-switch .muted {
+      color: var(--muted);
+      font-weight: 500;
     }
 
     main {
@@ -92,13 +103,13 @@
     }
 
     .hero {
-      padding: 40px 0 32px;
+      padding: 44px 0 32px;
       border-bottom: 1px solid var(--border);
       margin-bottom: 32px;
     }
 
     .hero-title {
-      font-size: clamp(28px, 4vw, 36px);
+      font-size: clamp(30px, 4vw, 38px);
       font-weight: 600;
       letter-spacing: -0.02em;
       margin-bottom: 12px;
@@ -107,7 +118,7 @@
     .hero-subtitle {
       font-size: 16px;
       color: var(--muted);
-      max-width: 680px;
+      max-width: 700px;
     }
 
     section {
@@ -119,18 +130,47 @@
       border-bottom: none;
     }
 
-    section h2 {
+    h2 {
       font-size: 22px;
       font-weight: 600;
       letter-spacing: -0.01em;
       margin-bottom: 8px;
     }
 
-    section > p.section-intro {
+    .section-intro {
       color: var(--muted);
       margin-bottom: 20px;
       max-width: 760px;
       font-size: 15px;
+    }
+
+    .paper-box {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px 18px;
+      background: #fafafa;
+    }
+
+    .paper-label {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 8px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .paper-title {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.45;
+      margin-bottom: 12px;
+    }
+
+    .paper-meta {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 10px;
     }
 
     .grid {
@@ -156,6 +196,23 @@
       color: var(--muted);
     }
 
+    .block {
+      margin-top: 14px;
+      margin-bottom: 14px;
+    }
+
+    .block-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .block-text {
+      font-size: 14px;
+      color: var(--muted);
+      max-width: 760px;
+    }
+
     .subsection-title {
       font-size: 16px;
       font-weight: 600;
@@ -166,7 +223,6 @@
     .subsection-text {
       font-size: 14px;
       color: var(--muted);
-      margin-bottom: 6px;
       max-width: 760px;
     }
 
@@ -195,31 +251,6 @@
     .article-card p {
       font-size: 14px;
       color: var(--muted);
-      margin-bottom: 2px;
-      max-width: 760px;
-    }
-
-    .about-block {
-      margin-top: 12px;
-      margin-bottom: 12px;
-    }
-
-    .about-block-title {
-      font-size: 15px;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .about-block-text {
-      font-size: 14px;
-      color: var(--muted);
-      max-width: 760px;
-    }
-
-    .note {
-      font-size: 13px;
-      color: var(--muted);
-      margin-top: 10px;
       max-width: 760px;
     }
 
@@ -232,47 +263,41 @@
       margin-top: 40px;
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 760px) {
       .nav-inner {
-        padding-inline: 14px;
-        gap: 10px;
+        align-items: flex-start;
+        flex-direction: column;
       }
 
-      nav ul {
-        gap: 14px;
-      }
-
-      main {
-        padding-inline: 14px;
+      nav {
+        justify-content: flex-start;
       }
     }
   </style>
 </head>
-
 <body>
   <header>
     <div class="nav-inner">
       <div class="brand">STDRC</div>
       <nav aria-label="Primary">
-        <ul>
-          <li><a href="#research">Research</a></li>
-          <li><a href="#momentum-model">Momentum Model</a></li>
-          <li><a href="#prw-forehand">PRW Forehand</a></li>
-          <li><a href="#kinematics-lab">Kinematics Lab</a></li>
-          <li><a href="#dynamics-theory">Dynamics Theory</a></li>
-          <li><a href="#articles">Articles</a></li>
-          <li><a href="#about">About</a></li>
-        </ul>
+        <a href="#latest-paper">Latest Paper</a>
+        <a href="#research">Research</a>
+        <a href="#momentum-model">Momentum Model</a>
+        <a href="#prw-forehand">PRW Forehand</a>
+        <a href="#dynamics-theory">Dynamics Theory</a>
+        <a href="#articles">Articles</a>
+        <a href="#about">About</a>
+        <span class="lang-switch">
+          <a href="index.html">EN</a> /
+          <a class="muted" href="cn.html">中文</a>
+        </span>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- Hero -->
-    <section class="hero" aria-labelledby="hero-title">
-      <h1 id="hero-title" class="hero-title">
-        Shanghai Tennis Dynamics Research Center
-      </h1>
+    <section class="hero">
+      <h1 class="hero-title">Shanghai Tennis Dynamics Research Center</h1>
       <p class="hero-subtitle">
         An independent initiative focused on the physics of modern tennis strokes,
         combining kinematics, biomechanics, and momentum-based models to understand
@@ -280,22 +305,37 @@
       </p>
     </section>
 
-    <!-- Research -->
-    <section id="research" aria-labelledby="research-title">
-      <h2 id="research-title">Research</h2>
+    <section id="latest-paper">
+      <h2>Latest Paper</h2>
       <p class="section-intro">
-        Exploring the mechanics of contemporary tennis strokes through high-speed
-        motion analysis and physics-based modeling.
+        Publicly available research output from recent work.
+      </p>
+      <div class="paper-box">
+        <div class="paper-label">SportRxiv Preprint</div>
+        <div class="paper-title">
+          A Momentum-Redistribution Framework for High-Quality Tennis Strokes:
+          Conceptual Integration of Deceleration-Driven Momentum Redistribution
+          and Inertia-Guided Angular Acceleration
+        </div>
+        <div class="paper-meta">DOI: 10.51224/SportRxiv.763</div>
+        <a href="https://doi.org/10.51224/SportRxiv.763" target="_blank" rel="noopener noreferrer">Read the paper</a>
+      </div>
+    </section>
+
+    <section id="research">
+      <h2>Research</h2>
+      <p class="section-intro">
+        Exploring the mechanics of contemporary tennis strokes through physics-based modeling,
+        high-speed motion analysis, and conceptual frameworks for momentum transfer.
       </p>
 
       <div class="grid">
-
         <article class="card">
           <h3>Momentum-Transfer Stroke Model</h3>
           <p>
-            Modeling strokes as a staged momentum process: ground-driven impulse input,
-            selective deceleration of proximal segments, and late-phase concentration
-            of momentum into racket-head motion.
+            Modeling strokes as a staged momentum process: ground-driven input,
+            selective proximal deceleration, and late-phase concentration of motion
+            into racket-head speed.
           </p>
         </article>
 
@@ -310,401 +350,256 @@
         <article class="card">
           <h3>Phase-Reversal Whip (PRW)</h3>
           <p>
-            A forehand acceleration mode characterized by phase reversal, whip-like
-            release, and late-phase centripetal gain.
+            A forehand acceleration mode characterized by axis reversal,
+            whip-like release, and late-phase centripetal gain.
           </p>
         </article>
 
         <article class="card">
           <h3>Angular Momentum Transfer</h3>
           <p>
-            How the body generates, stores, and transmits angular momentum to the
-            racket, including the role of non-dominant arm retraction and trunk
-            inertia modulation.
+            How the body generates, stores, and transmits angular momentum to the racket,
+            including the role of non-dominant arm retraction and trunk inertia modulation.
           </p>
         </article>
 
         <article class="card">
           <h3>Double-Circle Trajectory</h3>
           <p>
-            Two interacting arcs—body-led and racket-led—forming the foundation
+            Two interacting arcs—body-led and racket-led—forming the kinematic basis
             of high-speed stroke mechanics.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Bimanual Stroke Mechanics</h3>
-          <p>
-            Comparative analysis of right- and left-hand strokes to reveal neuromuscular
-            symmetry and coupling.
           </p>
         </article>
 
         <article class="card">
           <h3>High-Speed Kinematics</h3>
           <p>
-            240fps motion capture for analyzing racket paths, phase timing, and
-            acceleration signatures.
+            240fps motion capture for analyzing racket paths, phase timing,
+            and acceleration signatures.
           </p>
         </article>
-
       </div>
     </section>
 
-    <!-- Momentum Model -->
-    <section id="momentum-model" aria-labelledby="momentum-title">
-      <h2 id="momentum-title">Momentum Model</h2>
+    <section id="momentum-model">
+      <h2>Momentum Model</h2>
       <p class="section-intro">
         A physics-based description of tennis strokes as momentum input, concentration,
         and release—emphasizing how the body reduces effective moving mass to amplify
         racket-head speed.
       </p>
 
-      <div class="about-block">
-        <div class="about-block-title">Core Idea</div>
-        <p class="about-block-text">
+      <div class="block">
+        <div class="block-title">Core Idea</div>
+        <p class="block-text">
           Strokes are not simply “pushing forward.” Power emerges when the player injects
           momentum through the legs and trunk, then progressively disengages proximal
-          segments so that a larger fraction of system momentum is expressed in the distal
+          segments so that a larger fraction of system momentum is expressed in distal
           racket-head motion.
         </p>
       </div>
 
-      <div class="about-block">
-        <div class="about-block-title">Three-Stage Structure</div>
+      <div class="block">
+        <div class="block-title">Three-Stage Structure</div>
 
         <p class="subsection-title">Stage I — Momentum Input (Ground &amp; Trunk)</p>
         <p class="subsection-text">
-          Ground reaction forces and trunk rotation provide the initial impulse and angular
-          momentum reservoir. The stroke begins by building a system-level momentum state,
-          not by immediately “driving the racket forward.”
+          Ground reaction forces and trunk rotation provide the initial impulse
+          and angular momentum reservoir.
         </p>
 
         <p class="subsection-title">Stage II — Momentum Concentration (Selective Deceleration)</p>
         <p class="subsection-text">
           Proximal assemblies partially decelerate or “exit” to reduce effective rotational
-          inertia and redirect momentum toward the arm–racket subsystem. In practice, this
-          includes controlled braking of segments and geometric reconfiguration that changes
-          what mass is still “actively moving.”
+          inertia, enabling momentum redistribution toward the arm–racket subsystem.
         </p>
 
         <p class="subsection-title">Stage III — Momentum Release (Racket-Head Expression)</p>
         <p class="subsection-text">
-          Under appropriate constraints (grip friction, handle traction, and curved-path
-          centripetal loading), redistributed momentum manifests as a rapid surge in racket-head
-          angular velocity near impact.
-        </p>
-
-        <p class="note">
-          Note: This is a conceptual mechanical framework intended to guide observation and analysis.
-          Quantitative validation depends on measurement resolution, camera geometry, and experimental design.
+          Under appropriate constraints—grip friction, handle traction, and curved-path
+          centripetal loading—redistributed momentum manifests as a rapid surge in
+          racket-head angular velocity near impact.
         </p>
       </div>
 
-      <div class="about-block">
-        <div class="about-block-title">Observable Signatures (High-Speed Video)</div>
-        <p class="about-block-text">
-          The model predicts measurable signatures in 240fps footage: phase lag between trunk and racket,
-          late acceleration peaks, and a compact high-speed arc near impact compared with continuous “push”
-          interpretations. These patterns can be assessed with trajectory overlays and phase-timing annotation.
+      <div class="block">
+        <div class="block-title">Observable Signatures</div>
+        <p class="block-text">
+          The model predicts measurable signatures in 240fps footage: phase lag between
+          trunk and racket, late acceleration peaks, and compact high-speed arcs near impact.
         </p>
       </div>
 
-      <div class="about-block">
-        <div class="about-block-title">Relationship to PRW / DDMR / IGAA</div>
-        <p class="about-block-text">
-          PRW can be interpreted as a kinematic manifestation of staged momentum concentration: axis reversal
-          and whip release provide a late-phase acceleration mechanism, while centripetal loading can reinforce
-          both stability and speed near impact. In the theoretical framing, DDMR describes how deceleration enables
-          redistribution, and IGAA describes how time-varying inertia governs the resulting angular acceleration.
+      <div class="block">
+        <div class="block-title">Relationship to PRW / DDMR / IGAA</div>
+        <p class="block-text">
+          PRW can be interpreted as a kinematic manifestation of staged momentum concentration.
+          DDMR describes how selective deceleration enables redistribution, while IGAA describes
+          how time-varying inertia shapes the resulting angular acceleration.
         </p>
       </div>
     </section>
 
-    <!-- PRW Forehand -->
-    <section id="prw-forehand" aria-labelledby="prw-title">
-      <h2 id="prw-title">PRW Forehand</h2>
+    <section id="prw-forehand">
+      <h2>PRW Forehand</h2>
       <p class="section-intro">
-        A distinctive acceleration mechanism emerging from modern high-velocity
-        tennis strokes.
+        A distinctive acceleration mechanism emerging from modern high-velocity tennis strokes.
       </p>
 
-      <div class="about-block">
-        <div class="about-block-title">Overview</div>
-        <p class="about-block-text">
-          The Phase-Reversal Whip (PRW) forehand is characterized by a backward-loaded
-          racket orientation, a rapid axis reversal relative to the arm, and a whip-like
-          release of angular velocity. In the late phase, whip-generated head speed is
-          further supported as the racket travels on a curved path around the player,
-          with centripetal loading contributing to additional tension and stability at impact.
+      <div class="block">
+        <div class="block-title">Overview</div>
+        <p class="block-text">
+          The Phase-Reversal Whip (PRW) forehand is characterized by a backward-loaded racket
+          orientation, rapid axis reversal relative to the arm, and a whip-like release of
+          angular velocity. In the late phase, whip-generated head speed is further reinforced
+          by centripetal loading as the racket travels on a curved path.
         </p>
       </div>
 
-      <div class="about-block">
-        <div class="about-block-title">Kinematic Phases</div>
+      <div class="block">
+        <div class="block-title">Kinematic Phases</div>
 
         <p class="subsection-title">Phase I — Backward Loading</p>
         <p class="subsection-text">
           The racket axis rotates backward relative to the arm while the body continues to coil.
-          Torque potential accumulates without yet committing to forward acceleration.
         </p>
 
         <p class="subsection-title">Phase II — Axis Reversal</p>
         <p class="subsection-text">
-          The racket rapidly transitions from a backward-facing to a forward-facing axis while
-          the arm is still in early forward rotation. This reversal is the structural trigger
-          for the whip effect.
+          The racket transitions from a backward-facing to a forward-facing axis while the arm
+          is still in early forward rotation.
         </p>
 
         <p class="subsection-title">Phase III — Whip Acceleration</p>
         <p class="subsection-text">
-          Stored tension releases as angular velocity surges into the racket head. The handle experiences
-          frictional loading and axial traction, driving a compact but high-speed swing.
+          Stored tension releases as angular velocity surges into the racket head.
         </p>
 
         <p class="subsection-title">Phase IV — Centripetal Gain</p>
         <p class="subsection-text">
-          As the racket moves on a curved path, inward constraint at the handle produces centripetal
-          forces that reinforce both speed and stability at impact—serving as a secondary gain mechanism.
-        </p>
-      </div>
-
-      <div class="about-block">
-        <div class="about-block-title">Comparison with Conventional Forehands</div>
-        <p class="about-block-text">
-          Unlike traditional L-shaped or ATP-style swings, PRW combines early backward loading, a distinct
-          axis-reversal phase, a whip-driven acceleration surge, and centripetal reinforcement—yielding a compact,
-          efficient, and high-speed forehand architecture.
+          Curved-path motion and inward constraint generate centripetal loading that reinforces
+          speed and impact stability.
         </p>
       </div>
     </section>
 
-    <!-- Kinematics Lab -->
-    <section id="kinematics-lab" aria-labelledby="lab-title">
-      <h2 id="lab-title">Kinematics Lab</h2>
+    <section id="dynamics-theory">
+      <h2>Dynamics Theory</h2>
       <p class="section-intro">
-        High-speed motion analysis for understanding racket-path mechanics and
-        acceleration signatures.
-      </p>
-
-      <div class="about-block">
-        <div class="about-block-title">Motion Capture Notes</div>
-        <p class="about-block-text">
-          Standard acquisition uses 240fps smartphone capture, strong lighting, stable framing,
-          and frame-by-frame extraction. Axis alignment improves consistency across sessions.
-        </p>
-      </div>
-
-      <div class="about-block">
-        <div class="about-block-title">Overlay Experiments</div>
-        <p class="about-block-text">
-          Trajectory tracing, phase timing annotation, and multi-stroke overlays highlight subtle timing
-          differences not visible in real time.
-        </p>
-      </div>
-
-      <div class="about-block">
-        <div class="about-block-title">Tools &amp; Methods</div>
-        <p class="about-block-text">
-          Tools include Kinovea, manual digitization, and lightweight scripting for comparing angular profiles
-          and racket-head paths across trials.
-        </p>
-      </div>
-
-      <div class="about-block">
-        <div class="about-block-title">Case Studies</div>
-        <p class="about-block-text">
-          Studies include PRW vs non-PRW strokes, left-hand vs right-hand symmetry, and early-phase vs late-phase
-          acceleration patterns.
-        </p>
-      </div>
-    </section>
-
-    <!-- Dynamics Theory -->
-    <section id="dynamics-theory" aria-labelledby="theory-title">
-      <h2 id="theory-title">Dynamics Theory</h2>
-      <p class="section-intro">
-        Fundamental principles behind acceleration, control, and momentum flow
-        in modern tennis strokes.
+        Fundamental principles behind acceleration, control, and momentum flow in modern tennis strokes.
       </p>
 
       <div class="grid">
-
         <article class="card">
           <h3>Deceleration-Driven Momentum Redistribution (DDMR)</h3>
           <p>
-            Controlled deceleration of proximal segments reallocates angular momentum toward distal assemblies,
-            increasing the share of system momentum expressed at the racket head.
+            Controlled deceleration of proximal segments reallocates angular momentum toward distal
+            assemblies, increasing the share expressed at the racket head.
           </p>
         </article>
 
         <article class="card">
           <h3>Inertia-Guided Angular Acceleration (IGAA)</h3>
           <p>
-            Time-varying effective rotational inertia and evolving constraints (grip friction, handle traction)
-            shape how redistributed momentum becomes rapid angular acceleration.
+            Time-varying effective rotational inertia and evolving constraints shape how redistributed
+            momentum becomes rapid angular acceleration.
           </p>
         </article>
 
         <article class="card">
           <h3>Axial Traction Model</h3>
           <p>
-            Pulling the handle along its axis enhances angular leverage, frictional loading, and the efficiency
-            of momentum transfer into racket-head speed.
+            Pulling the handle along its axis enhances leverage, frictional loading,
+            and efficiency of momentum transfer.
           </p>
         </article>
 
         <article class="card">
           <h3>Whip Acceleration Mechanism</h3>
           <p>
-            A nonlinear multi-stage loading system combining delayed tension, rapid phase reversal,
-            and a whip-like release of stored angular momentum.
+            A nonlinear multi-stage loading system combining delayed tension,
+            rapid phase reversal, and whip-like release.
           </p>
         </article>
 
         <article class="card">
           <h3>Momentum Pathways</h3>
           <p>
-            How body rotation transfers through the torso, shoulder, and arm into the racket. Factors include
-            body inertia changes, arm sequencing, and racket-axis orientation.
+            How body rotation transfers through the torso, shoulder, and arm into the racket.
           </p>
         </article>
 
         <article class="card">
           <h3>Error-Tolerance Theory</h3>
           <p>
-            Delayed phases and compact high-speed arcs can improve timing robustness and directional stability
-            under real-play variability.
+            Delayed phases and compact high-speed arcs can improve timing robustness
+            and directional stability.
           </p>
         </article>
-
-        <article class="card">
-          <h3>Body–Racket Interaction</h3>
-          <p>
-            Ground reaction forces, torque compensation, and centripetal loading shape both racket-head acceleration
-            and impact precision.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Bimanual Symmetry</h3>
-          <p>
-            Insights gained from left-hand forehand practice revealing neuromotor symmetry and stroke architecture.
-          </p>
-        </article>
-
       </div>
     </section>
 
-    <!-- Articles -->
-    <section id="articles" aria-labelledby="articles-title">
-      <h2 id="articles-title">Articles</h2>
+    <section id="articles">
+      <h2>Articles</h2>
       <p class="section-intro">
-        Short essays, research notes, and technical observations from ongoing
-        studies at STDRC.
+        Short essays, research notes, and technical observations from ongoing studies at STDRC.
       </p>
 
       <div class="article-list">
         <article class="article-card">
           <h3>Momentum Concentration in Tennis Strokes: A Minimal Framework</h3>
           <p>
-            A short note on why reducing effective moving mass is central to modern high-speed strokes,
-            and how “selective exit” of proximal segments changes the momentum distribution.
+            Why reducing effective moving mass is central to modern high-speed strokes.
           </p>
         </article>
 
         <article class="article-card">
           <h3>From Ground Impulse to Racket-Head Speed: Where Momentum Actually Goes</h3>
           <p>
-            A qualitative breakdown of momentum pathways and why continuous “pushing” is an incomplete
-            description of how power and control emerge.
+            A qualitative breakdown of momentum pathways and why continuous “pushing”
+            is an incomplete description.
           </p>
         </article>
 
         <article class="article-card">
           <h3>Late-Phase Acceleration Signatures in High-Speed Forehands</h3>
           <p>
-            What to look for in 240fps footage when momentum is successfully concentrated into the racket:
-            phase lag, late acceleration peaks, and compact impact-zone trajectories.
-          </p>
-        </article>
-
-        <article class="article-card">
-          <h3>The Physics Behind Whip Acceleration</h3>
-          <p>
-            An accessible explanation of how delayed tension and axis reversal create explosive racket-head speed.
-          </p>
-        </article>
-
-        <article class="article-card">
-          <h3>How Axial Traction Increases Power</h3>
-          <p>
-            Why pulling the handle along its axis reshapes the energy-transfer pathway from body to racket.
-          </p>
-        </article>
-
-        <article class="article-card">
-          <h3>Increasing Error Tolerance in Modern Forehands</h3>
-          <p>
-            How delayed phases stabilize timing and enhance shot reliability under pressure.
-          </p>
-        </article>
-
-        <article class="article-card">
-          <h3>Bimanual Training and Neural Coupling</h3>
-          <p>
-            What left-hand forehands reveal about neuromotor symmetry and stroke architecture.
+            What to look for in 240fps footage when momentum is successfully concentrated into the racket.
           </p>
         </article>
       </div>
     </section>
 
-    <!-- About -->
-    <section id="about" aria-labelledby="about-title">
-      <h2 id="about-title">About</h2>
+    <section id="about">
+      <h2>About</h2>
 
-      <div class="about-block">
-        <div class="about-block-title">STDRC</div>
-        <p class="about-block-text">
-          Shanghai Tennis Dynamics Research Center is an independent research
-          initiative dedicated to studying tennis stroke mechanics through
-          physics-based analysis.
+      <div class="block">
+        <div class="block-title">STDRC</div>
+        <p class="block-text">
+          Shanghai Tennis Dynamics Research Center is an independent research initiative
+          dedicated to studying tennis stroke mechanics through physics-based analysis.
         </p>
       </div>
 
-      <div class="about-block">
-        <div class="about-block-title">Mission</div>
-        <p class="about-block-text">
-          To advance the scientific understanding of tennis dynamics by integrating
-          biomechanics, kinematics, and momentum-driven models, with a focus on
-          modern forehand mechanics.
+      <div class="block">
+        <div class="block-title">Mission</div>
+        <p class="block-text">
+          To advance the scientific understanding of tennis dynamics by integrating biomechanics,
+          kinematics, and momentum-driven models, with a focus on modern forehand mechanics.
         </p>
       </div>
 
-      <div class="about-block">
-        <div class="about-block-title">Founder</div>
-        <p class="about-block-text">
+      <div class="block">
+        <div class="block-title">Founder</div>
+        <p class="block-text">
           <strong>James Huicong Shi</strong><br>
-          Independent tennis dynamics researcher based in Shanghai.<br>
-          Research interests include forehand acceleration mechanics, angular momentum transfer,
-          whip-phase interaction, and high-speed path analysis.
+          Independent tennis dynamics researcher based in Shanghai.
         </p>
       </div>
 
-      <div class="about-block">
-        <div class="about-block-title">What We Study</div>
-        <p class="about-block-text">
-          • Momentum-transfer stroke models<br>
-          • Racket and body dynamics<br>
-          • Phase-based acceleration mechanisms (PRW, whip-like release)<br>
-          • High-speed kinematics and motion overlays<br>
-          • Symmetry and neural coupling in stroke production
-        </p>
-      </div>
-
-      <div class="about-block">
-        <div class="about-block-title">Contact</div>
-        <p class="about-block-text">
+      <div class="block">
+        <div class="block-title">Contact</div>
+        <p class="block-text">
           Email: <a href="mailto:gnociuh@gmail.com">gnociuh@gmail.com</a>
         </p>
       </div>
@@ -712,7 +607,7 @@
   </main>
 
   <footer>
-    © 2025 STDRC — Shanghai Tennis Dynamics Research Center.<br>
+    © 2026 STDRC — Shanghai Tennis Dynamics Research Center.<br>
     All rights reserved.
   </footer>
 </body>
