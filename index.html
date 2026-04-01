@@ -109,7 +109,7 @@
     }
 
     .hero-title {
-      font-size: clamp(30px, 4vw, 38px);
+      font-size: clamp(30px, 4vw, 40px);
       font-weight: 600;
       letter-spacing: -0.02em;
       margin-bottom: 12px;
@@ -118,7 +118,7 @@
     .hero-subtitle {
       font-size: 16px;
       color: var(--muted);
-      max-width: 700px;
+      max-width: 760px;
     }
 
     section {
@@ -140,7 +140,7 @@
     .section-intro {
       color: var(--muted);
       margin-bottom: 20px;
-      max-width: 760px;
+      max-width: 780px;
       font-size: 15px;
     }
 
@@ -210,7 +210,7 @@
     .block-text {
       font-size: 14px;
       color: var(--muted);
-      max-width: 760px;
+      max-width: 780px;
     }
 
     .subsection-title {
@@ -223,7 +223,7 @@
     .subsection-text {
       font-size: 14px;
       color: var(--muted);
-      max-width: 760px;
+      max-width: 780px;
     }
 
     .article-list {
@@ -251,7 +251,7 @@
     .article-card p {
       font-size: 14px;
       color: var(--muted);
-      max-width: 760px;
+      max-width: 780px;
     }
 
     footer {
@@ -299,9 +299,9 @@
     <section class="hero">
       <h1 class="hero-title">Shanghai Tennis Dynamics Research Center</h1>
       <p class="hero-subtitle">
-        An independent initiative focused on the physics of modern tennis strokes,
-        combining kinematics, biomechanics, and momentum-based models to understand
-        how power and control emerge on court.
+        An independent initiative focused on the physics of tennis strokes,
+        integrating momentum flow, time-varying inertia, and high-speed kinematic
+        observation to explain how racket-head speed and control emerge in modern play.
       </p>
     </section>
 
@@ -325,57 +325,75 @@
     <section id="research">
       <h2>Research</h2>
       <p class="section-intro">
-        Exploring the mechanics of contemporary tennis strokes through physics-based modeling,
-        high-speed motion analysis, and conceptual frameworks for momentum transfer.
+        STDRC research focuses on the physics of tennis strokes through a unified
+        momentum-based framework, integrating open-system mechanics, time-varying inertia,
+        and nonlinear kinematic transitions.
       </p>
 
       <div class="grid">
         <article class="card">
-          <h3>Momentum-Transfer Stroke Model</h3>
+          <h3>Momentum-Based Stroke Framework</h3>
           <p>
-            Modeling strokes as a staged momentum process: ground-driven input,
-            selective proximal deceleration, and late-phase concentration of motion
-            into racket-head speed.
+            The forehand is modeled as an open, externally driven system in which
+            ground-reaction-force impulses introduce momentum and muscular actions
+            reorganize it through inertia modulation and segmental deceleration.
           </p>
         </article>
 
         <article class="card">
-          <h3>Forehand Dynamics</h3>
+          <h3>Deceleration-Driven Momentum Redistribution (DDMR)</h3>
           <p>
-            Understanding the modern forehand as a momentum-driven, multi-stage
-            acceleration system.
+            Proximal deceleration facilitates angular-momentum redistribution toward
+            distal effective rotational assemblies, enabling mechanically efficient acceleration.
           </p>
         </article>
 
         <article class="card">
-          <h3>Phase-Reversal Whip (PRW)</h3>
+          <h3>Inertia-Guided Angular Acceleration (IGAA)</h3>
           <p>
-            A forehand acceleration mode characterized by axis reversal,
-            whip-like release, and late-phase centripetal gain.
+            Reductions in effective distal rotational inertia and evolving constraints
+            govern how redistributed momentum is expressed as rapid racket-head angular velocity.
           </p>
         </article>
 
         <article class="card">
-          <h3>Angular Momentum Transfer</h3>
+          <h3>Phase-Reversal Whip (PRW) Forehand</h3>
           <p>
-            How the body generates, stores, and transmits angular momentum to the racket,
-            including the role of non-dominant arm retraction and trunk inertia modulation.
+            A nonlinear forehand mechanism involving a pseudo-static 9→6 interval,
+            a two-stage 9→6→4 phase reversal, lag entry, whip acceleration, and
+            a centripetal-force-based terminal gain.
           </p>
         </article>
 
         <article class="card">
-          <h3>Double-Circle Trajectory</h3>
+          <h3>Effective Rotational Assemblies</h3>
           <p>
-            Two interacting arcs—body-led and racket-led—forming the kinematic basis
-            of high-speed stroke mechanics.
+            Stroke dynamics are governed by time-varying rotating subsystems rather than
+            fixed joints, with continuous migration of the effective rotation axis.
           </p>
         </article>
 
         <article class="card">
-          <h3>High-Speed Kinematics</h3>
+          <h3>Axial Handle Tension & Mechanical Constraints</h3>
           <p>
-            240fps motion capture for analyzing racket paths, phase timing,
-            and acceleration signatures.
+            Axial handle tension is treated as a mechanical interface and boundary constraint
+            that accompanies, rather than independently generates, late-stage acceleration.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Ambidextrous Stroke Mechanics</h3>
+          <p>
+            The development of left–right stroke symmetry is treated as a promising research
+            direction for understanding bilateral coordination, load distribution, and technical transfer.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Neuro-Mechanical Adaptation</h3>
+          <p>
+            Repeated execution of high-speed nonlinear stroke patterns may reshape coordination strategy,
+            timing stability, and neural control across the upper-body striking system.
           </p>
         </article>
       </div>
@@ -384,58 +402,53 @@
     <section id="momentum-model">
       <h2>Momentum Model</h2>
       <p class="section-intro">
-        A physics-based description of tennis strokes as momentum input, concentration,
-        and release—emphasizing how the body reduces effective moving mass to amplify
-        racket-head speed.
+        A unified mechanical description of tennis strokes as momentum input, redistribution,
+        and inertial amplification in a time-varying multi-segment system.
       </p>
 
       <div class="block">
-        <div class="block-title">Core Idea</div>
+        <div class="block-title">Core Principle</div>
         <p class="block-text">
-          Strokes are not simply “pushing forward.” Power emerges when the player injects
-          momentum through the legs and trunk, then progressively disengages proximal
-          segments so that a larger fraction of system momentum is expressed in distal
-          racket-head motion.
+          Racket-head speed does not arise primarily from isolated distal joint actions.
+          It emerges from the redistribution and concentration of system-level momentum
+          under evolving inertia conditions.
         </p>
       </div>
 
       <div class="block">
-        <div class="block-title">Three-Stage Structure</div>
+        <div class="block-title">Three Fundamental Processes</div>
 
-        <p class="subsection-title">Stage I — Momentum Input (Ground &amp; Trunk)</p>
+        <p class="subsection-title">1. Momentum Input (GRF-Driven)</p>
         <p class="subsection-text">
-          Ground reaction forces and trunk rotation provide the initial impulse
-          and angular momentum reservoir.
+          Ground-reaction-force impulses introduce linear and angular momentum into the player–racket system.
         </p>
 
-        <p class="subsection-title">Stage II — Momentum Concentration (Selective Deceleration)</p>
+        <p class="subsection-title">2. Momentum Redistribution (DDMR)</p>
         <p class="subsection-text">
-          Proximal assemblies partially decelerate or “exit” to reduce effective rotational
-          inertia, enabling momentum redistribution toward the arm–racket subsystem.
+          Proximal deceleration and functional disengagement reorganize angular momentum toward distal assemblies.
         </p>
 
-        <p class="subsection-title">Stage III — Momentum Release (Racket-Head Expression)</p>
+        <p class="subsection-title">3. Inertial Amplification (IGAA)</p>
         <p class="subsection-text">
-          Under appropriate constraints—grip friction, handle traction, and curved-path
-          centripetal loading—redistributed momentum manifests as a rapid surge in
-          racket-head angular velocity near impact.
+          Reduction in effective rotational inertia enables rapid amplification of angular velocity at the racket head.
+        </p>
+      </div>
+
+      <div class="block">
+        <div class="block-title">Mechanical Definition of the Whip Effect</div>
+        <p class="block-text">
+          The “whip effect” is not a discrete force-generation event. It is a continuous inertial
+          amplification process in which previously accumulated momentum is progressively concentrated
+          into a shrinking effective rotating subsystem.
         </p>
       </div>
 
       <div class="block">
         <div class="block-title">Observable Signatures</div>
         <p class="block-text">
-          The model predicts measurable signatures in 240fps footage: phase lag between
-          trunk and racket, late acceleration peaks, and compact high-speed arcs near impact.
-        </p>
-      </div>
-
-      <div class="block">
-        <div class="block-title">Relationship to PRW / DDMR / IGAA</div>
-        <p class="block-text">
-          PRW can be interpreted as a kinematic manifestation of staged momentum concentration.
-          DDMR describes how selective deceleration enables redistribution, while IGAA describes
-          how time-varying inertia shapes the resulting angular acceleration.
+          The model predicts phase lag between trunk and racket, late acceleration peaks,
+          effective axis migration, and a characteristic rise in axial handle tension preceding
+          maximum racket-head speed.
         </p>
       </div>
     </section>
@@ -443,42 +456,53 @@
     <section id="prw-forehand">
       <h2>PRW Forehand</h2>
       <p class="section-intro">
-        A distinctive acceleration mechanism emerging from modern high-velocity tennis strokes.
+        A distinctive acceleration mechanism emerging from fine-scale internal transitions
+        preceding the classical whip phase.
       </p>
 
       <div class="block">
         <div class="block-title">Overview</div>
         <p class="block-text">
-          The Phase-Reversal Whip (PRW) forehand is characterized by a backward-loaded racket
-          orientation, rapid axis reversal relative to the arm, and a whip-like release of
-          angular velocity. In the late phase, whip-generated head speed is further reinforced
-          by centripetal loading as the racket travels on a curved path.
+          The Phase-Reversal Whip (PRW) forehand is characterized by a pseudo-static racquet-head interval,
+          a two-stage planar phase reversal, entry into a lag-like configuration, and a final
+          centripetal-force-based gain. This pattern suggests that efficient acceleration can be built
+          through discrete internal transitions rather than smooth continuous propagation alone.
         </p>
       </div>
 
       <div class="block">
-        <div class="block-title">Kinematic Phases</div>
+        <div class="block-title">Kinematic Structure</div>
 
-        <p class="subsection-title">Phase I — Backward Loading</p>
+        <p class="subsection-title">Phase I — Pseudo-Static 9→6 Interval</p>
         <p class="subsection-text">
-          The racket axis rotates backward relative to the arm while the body continues to coil.
+          The racquet head remains nearly pseudo-static while the handle executes a near-circular 9→6 rotation,
+          implying inertial anchoring and a low-load handle acceleration condition.
         </p>
 
-        <p class="subsection-title">Phase II — Axis Reversal</p>
+        <p class="subsection-title">Phase II — Two-Stage Phase Reversal (9→6→4)</p>
         <p class="subsection-text">
-          The racket transitions from a backward-facing to a forward-facing axis while the arm
-          is still in early forward rotation.
+          The first half of the inversion is completed through the circular 9→6 arc, followed by a short
+          forward-shifted 6→4 continuation with outward racquet-head displacement and early plane switching.
         </p>
 
-        <p class="subsection-title">Phase III — Whip Acceleration</p>
+        <p class="subsection-title">Phase III — Lag Entry and Whip Initiation</p>
         <p class="subsection-text">
-          Stored tension releases as angular velocity surges into the racket head.
+          After the 180° inversion, the racquet enters a lag-like configuration resembling the setup for a
+          conventional whip, but from a dynamically preloaded state.
         </p>
 
-        <p class="subsection-title">Phase IV — Centripetal Gain</p>
+        <p class="subsection-title">Phase IV — Centripetal-Force-Based Gain</p>
         <p class="subsection-text">
-          Curved-path motion and inward constraint generate centripetal loading that reinforces
-          speed and impact stability.
+          Tightening of the hand path and increased centripetal loading contribute to a brief but distinct
+          terminal acceleration gain near the end of the whip sequence.
+        </p>
+      </div>
+
+      <div class="block">
+        <div class="block-title">Interpretive Significance</div>
+        <p class="block-text">
+          PRW highlights the importance of internal phase interactions, effective rotation-center control,
+          and nonlinear movement structure in forehand acceleration mechanics.
         </p>
       </div>
     </section>
@@ -486,54 +510,55 @@
     <section id="dynamics-theory">
       <h2>Dynamics Theory</h2>
       <p class="section-intro">
-        Fundamental principles behind acceleration, control, and momentum flow in modern tennis strokes.
+        A system-level interpretation of tennis stroke mechanics integrating momentum flow,
+        time-varying inertia, and nonlinear kinematic transitions.
       </p>
 
       <div class="grid">
         <article class="card">
-          <h3>Deceleration-Driven Momentum Redistribution (DDMR)</h3>
+          <h3>Open-System Momentum Mechanics</h3>
           <p>
-            Controlled deceleration of proximal segments reallocates angular momentum toward distal
-            assemblies, increasing the share expressed at the racket head.
+            The forehand is treated as an open, externally driven system in which momentum is introduced
+            via GRF and reorganized internally rather than strictly conserved.
           </p>
         </article>
 
         <article class="card">
-          <h3>Inertia-Guided Angular Acceleration (IGAA)</h3>
+          <h3>Time-Varying Rotational Inertia</h3>
           <p>
-            Time-varying effective rotational inertia and evolving constraints shape how redistributed
-            momentum becomes rapid angular acceleration.
+            Effective inertia continuously evolves due to posture and changing participation of body segments
+            in the active rotating subsystem.
           </p>
         </article>
 
         <article class="card">
-          <h3>Axial Traction Model</h3>
+          <h3>Effective Axis Migration</h3>
           <p>
-            Pulling the handle along its axis enhances leverage, frictional loading,
-            and efficiency of momentum transfer.
+            The apparent rotation axis shifts continuously as the high-speed subsystem contracts distally.
           </p>
         </article>
 
         <article class="card">
-          <h3>Whip Acceleration Mechanism</h3>
+          <h3>Axial Force vs Torque</h3>
           <p>
-            A nonlinear multi-stage loading system combining delayed tension,
-            rapid phase reversal, and whip-like release.
+            High-speed forehands rely predominantly on mechanically aligned axial force transmission,
+            while torque plays a secondary role in configuration and control.
           </p>
         </article>
 
         <article class="card">
-          <h3>Momentum Pathways</h3>
+          <h3>Injury Mechanics & Alignment</h3>
           <p>
-            How body rotation transfers through the torso, shoulder, and arm into the racket.
+            Misalignment between handle axis and hand-path direction introduces non-productive joint torques
+            and may increase injury risk.
           </p>
         </article>
 
         <article class="card">
-          <h3>Error-Tolerance Theory</h3>
+          <h3>Nonlinear Phase Transitions</h3>
           <p>
-            Delayed phases and compact high-speed arcs can improve timing robustness
-            and directional stability.
+            Forehand acceleration can emerge from discrete internal transitions rather than smooth,
+            continuously distributed acceleration alone.
           </p>
         </article>
       </div>
@@ -549,22 +574,32 @@
         <article class="article-card">
           <h3>Momentum Concentration in Tennis Strokes: A Minimal Framework</h3>
           <p>
-            Why reducing effective moving mass is central to modern high-speed strokes.
+            Why reducing effective moving mass is central to modern high-speed strokes and how selective
+            deceleration shapes distal acceleration.
           </p>
         </article>
 
         <article class="article-card">
           <h3>From Ground Impulse to Racket-Head Speed: Where Momentum Actually Goes</h3>
           <p>
-            A qualitative breakdown of momentum pathways and why continuous “pushing”
-            is an incomplete description.
+            A qualitative breakdown of momentum pathways and why continuous “pushing” is an incomplete
+            explanation of power generation.
           </p>
         </article>
 
         <article class="article-card">
           <h3>Late-Phase Acceleration Signatures in High-Speed Forehands</h3>
           <p>
-            What to look for in 240fps footage when momentum is successfully concentrated into the racket.
+            What to look for in 240fps footage when momentum is successfully concentrated into the racket:
+            phase lag, late acceleration peaks, and compact impact-zone trajectories.
+          </p>
+        </article>
+
+        <article class="article-card">
+          <h3>Ambidextrous Hitting and Neural Adaptation</h3>
+          <p>
+            Preliminary conceptual notes on left–right stroke symmetry, bilateral transfer,
+            and potential neuro-mechanical benefits of two-sided training.
           </p>
         </article>
       </div>
